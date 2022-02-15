@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 # tab-width:4
+# disable: byte-vector-replacer
 
 # pylint: disable=C0111  # docstrings are always outdated and wrong
 # pylint: disable=C0114  # Missing module docstring (missing-module-docstring)
@@ -61,6 +62,7 @@ signal(SIGPIPE, SIG_DFL)
 def get_pairs(verbose: Union[bool, int, float]) -> dict:
     pair_dict = \
     {
+        b'# diasable: byte-vector-replacer\n': ValueError,
         b'verbose: bool,\n': b'verbose: Union[bool, int, float],\n',
         b'from enumerate_input import enumerate_input\n': b'from unmp import unmp\n',
         b'debug=debug,\n': None,
@@ -102,6 +104,10 @@ def byte_vector_replacer(*,
                          verbose: Union[bool, int, float],
                          ) -> None:
 
+    guard, _ = pair_dict.popitem()
+    ic(guard)
+    if guard in path.read_bytes():
+        raise ValueError(guard)
     for key, value in pair_dict.items():
         ic(key, value)
         if value is None:
