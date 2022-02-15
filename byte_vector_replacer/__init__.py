@@ -1,2 +1,2 @@
 from .byte_vector_replacer import byte_vector_replacer
-from .byte_vector_replacer import pair_dict
+from .byte_vector_replacer import get_pairs
