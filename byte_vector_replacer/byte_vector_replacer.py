@@ -96,19 +96,29 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
     return pair_dict
 
 
-#@with_plugins(iter_entry_points('click_command_tree'))
-#@click.group(no_args_is_help=True, cls=AHGroup)
-#@click_add_options(click_global_options)
-#@click.pass_context
-#def cli(ctx,
-#        verbose: Union[bool, int, float],
-#        verbose_inf: bool,
-#        ) -> None:
-#
-#    tty, verbose = tv(ctx=ctx,
-#                      verbose=verbose,
-#                      verbose_inf=verbose_inf,
-#                      )
+def byte_vector_replacer(*,
+                         path: Path,
+                         pair_dict: dict,
+                         verbose: Union[bool, int, float],
+                         ) -> None:
+
+    for key, value in pair_dict.items():
+        ic(key, value)
+        if value is None:
+            value = b''
+            remove_match = True
+        else:
+            remove_match = False
+        replace_text_in_file(path=path,
+                             bytes_to_match=key,
+                             replacement=value,
+                             output_fh=None,
+                             stdout=False,
+                             read_mode='rb',
+                             write_mode='wb',
+                             remove_match=remove_match,
+                             verbose=True,
+                             )
 
 
 @click.command()
@@ -145,20 +155,4 @@ def cli(ctx,
         if ipython:
             import IPython; IPython.embed()
 
-        for key, value in pair_dict.items():
-            ic(key, value)
-            if value is None:
-                value = b''
-                remove_match = True
-            else:
-                remove_match = False
-            replace_text_in_file(path=_path,
-                                 bytes_to_match=key,
-                                 replacement=value,
-                                 output_fh=None,
-                                 stdout=False,
-                                 read_mode='rb',
-                                 write_mode='wb',
-                                 remove_match=remove_match,
-                                 verbose=True,
-                                 )
+    byte_vector_replacer(path=_path, pair_dict=pair_dict, verbose=verbose,)
