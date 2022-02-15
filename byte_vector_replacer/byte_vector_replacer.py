@@ -62,7 +62,6 @@ signal(SIGPIPE, SIG_DFL)
 def get_pairs(verbose: Union[bool, int, float]) -> dict:
     pair_dict = \
     {
-        b'# diasable: byte-vector-replacer\n': ValueError,
         b'verbose: bool,\n': b'verbose: Union[bool, int, float],\n',
         b'from enumerate_input import enumerate_input\n': b'from unmp import unmp\n',
         b'debug=debug,\n': None,
@@ -104,7 +103,7 @@ def byte_vector_replacer(*,
                          verbose: Union[bool, int, float],
                          ) -> None:
 
-    guard, _ = pair_dict.popitem()
+    guard = b'# diasable: byte-vector-replacer\n'
     ic(guard)
     if guard in path.read_bytes():
         raise ValueError(guard)
