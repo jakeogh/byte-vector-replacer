@@ -99,6 +99,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b'    verbose: int\n': b'    verbose: Union[bool, int, float]\n',
         b'from asserttool import eprint\n': b'from eprint import eprint\n',
         b'from asserttool import tv\n': b'from clicktool import tv\n',
+        b'from asserttool import nevd\n': b'from clicktool import tv\n',
     }
     return pair_dict
 
