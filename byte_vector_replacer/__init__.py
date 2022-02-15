@@ -1,2 +1,3 @@
+from .byte_vector_replacer import GuardFoundError
 from .byte_vector_replacer import byte_vector_replacer
 from .byte_vector_replacer import get_pairs

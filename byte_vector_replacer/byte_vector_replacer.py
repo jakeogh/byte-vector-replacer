@@ -59,6 +59,11 @@ sh.mv = None  # use sh.busybox('mv'), coreutils ignores stdin read errors
 
 signal(SIGPIPE, SIG_DFL)
 
+
+class GuardFoundError(ValueError):
+    pass
+
+
 def get_pairs(verbose: Union[bool, int, float]) -> dict:
     pair_dict = \
     {
@@ -106,7 +111,7 @@ def byte_vector_replacer(*,
     guard = b'# disable: byte-vector-replacer\n'
     ic(guard)
     if guard in path.read_bytes():
-        raise ValueError(guard)
+        raise GuardFoundError(path.as_posix(), guard)
     for key, value in pair_dict.items():
         ic(key, value)
         if value is None:
@@ -159,5 +164,8 @@ def cli(ctx,
 
         if ipython:
             import IPython; IPython.embed()
+    try:
+        byte_vector_replacer(path=_path, pair_dict=pair_dict, verbose=verbose,)
+    except GuardFoundError as e:
+        ic(e)
 
-    byte_vector_replacer(path=_path, pair_dict=pair_dict, verbose=verbose,)
