@@ -30,10 +30,6 @@ from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
 from signal import signal
-#from typing import ByteString
-#from typing import Generator
-#from typing import List
-#from typing import Tuple
 from typing import Iterable
 from typing import Optional
 from typing import Sequence
@@ -41,14 +37,11 @@ from typing import Union
 
 import click
 import sh
-#from eprint import eprint
 from asserttool import ic
 from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
-#from with_sshfs import sshfs
-#from with_chdir import chdir
 from mptool import output
 from replace_text import replace_text_in_file
 from retry_on_exception import retry_on_exception
