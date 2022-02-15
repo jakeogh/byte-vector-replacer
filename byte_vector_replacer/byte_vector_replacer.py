@@ -105,10 +105,8 @@ def byte_vector_replacer(*,
 
     guard = b'# disable: byte-vector-replacer\n'
     ic(guard)
-    #all_bytes = path.read_bytes()
     if guard in path.read_bytes():
         raise ValueError(guard)
-    assert False
     for key, value in pair_dict.items():
         ic(key, value)
         if value is None:
