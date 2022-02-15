@@ -89,6 +89,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b'verbose: bool = False\n': b'verbose: Union[bool, int, float],\n',
         b'verbose: bool\n': b'verbose: Union[bool, int, float],\n',
         b'verbose: int,\n': b'verbose: Union[bool, int, float],\n',
+        b'verbose: Union[bool, int],\n': b'verbose: Union[bool, int, float],\n',
         b'verbose=debug': b'verbose=verbose',
         b'@add_options(click_global_options)\n': b'@click_add_options(click_global_options)\n',
         b'@click.group()\n': b'@click.group(no_args_is_help=True)\n',
