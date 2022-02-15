@@ -103,8 +103,9 @@ def byte_vector_replacer(*,
                          verbose: Union[bool, int, float],
                          ) -> None:
 
-    guard = b'# diasable: byte-vector-replacer\n'
+    guard = b'# disable: byte-vector-replacer\n'
     ic(guard)
+    #all_bytes = path.read_bytes()
     if guard in path.read_bytes():
         raise ValueError(guard)
     assert False
