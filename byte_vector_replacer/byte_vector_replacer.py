@@ -93,6 +93,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b'from asserttool import tv\n': b'from clicktool import tv\n',
         b'from asserttool import nevd\n': b'from clicktool import tv\n',
         b'verbose: int = False,\n': b'verbose: Union[bool, int, float],\n',
+        b'from typimg import ': b'from typing import ',
     }
     return pair_dict
 
