@@ -52,7 +52,6 @@ from clicktool import tv
 from mptool import output
 from replace_text import replace_text_in_file
 from retry_on_exception import retry_on_exception
-from timetool import get_timestamp
 from unmp import unmp
 
 sh.mv = None  # use sh.busybox('mv'), coreutils ignores stdin read errors
@@ -166,8 +165,8 @@ def cli(ctx,
 
         if ipython:
             import IPython; IPython.embed()
-    try:
-        byte_vector_replacer(path=_path, pair_dict=pair_dict, verbose=verbose,)
-    except GuardFoundError as e:
-        ic(e)
+        try:
+            byte_vector_replacer(path=_path, pair_dict=pair_dict, verbose=verbose,)
+        except GuardFoundError as e:
+            ic(e)
 
