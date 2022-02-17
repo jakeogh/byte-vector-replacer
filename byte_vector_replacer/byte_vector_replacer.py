@@ -110,7 +110,8 @@ def byte_vector_replacer(*,
     if guard in path.read_bytes():
         raise GuardFoundError(path.as_posix(), guard)
     for key, value in pair_dict.items():
-        ic(key, value)
+        if verbose:
+            ic(key, value)
         if value is None:
             value = b''
             remove_match = True
