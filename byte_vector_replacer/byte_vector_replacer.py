@@ -24,8 +24,8 @@
 # pylint: disable=C0413  # TEMP isort issue [wrong-import-position] Import "from pathlib import Path" should be placed at the top of the module [C0413]
 
 import os
-import sys
-import time
+#import sys
+#import time
 from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
@@ -36,18 +36,15 @@ from typing import Sequence
 from typing import Union
 
 import click
-import sh
 from asserttool import ic
-from click_auto_help import AHGroup
+#from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
 from mptool import output
 from replace_text import replace_text_in_file
-from retry_on_exception import retry_on_exception
+#from retry_on_exception import retry_on_exception
 from unmp import unmp
-
-sh.mv = None  # use sh.busybox('mv'), coreutils ignores stdin read errors
 
 signal(SIGPIPE, SIG_DFL)
 
@@ -96,6 +93,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b'verbose: int = False,\n': b'verbose: Union[bool, int, float],\n',
         b'from typimg import ': b'from typing import ',
         b'from typimg import ': b'from typing import ',
+        b'from unmp import unmp\n': b'from mptool import unmp\n',
     }
     return pair_dict
 
