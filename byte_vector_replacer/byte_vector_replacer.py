@@ -24,8 +24,8 @@
 # pylint: disable=C0413  # TEMP isort issue [wrong-import-position] Import "from pathlib import Path" should be placed at the top of the module [C0413]
 
 import os
-#import sys
-#import time
+# import sys
+# import time
 from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
@@ -37,13 +37,13 @@ from typing import Union
 
 import click
 from asserttool import ic
-#from click_auto_help import AHGroup
+# from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
-from mptool import output
+# from mptool import output
 from replace_text import replace_text_in_file
-#from retry_on_exception import retry_on_exception
+# from retry_on_exception import retry_on_exception
 from unmp import unmp
 
 signal(SIGPIPE, SIG_DFL)
@@ -54,57 +54,57 @@ class GuardFoundError(ValueError):
 
 
 def get_pairs(verbose: Union[bool, int, float]) -> dict:
-    pair_dict = \
-    {
-        b'verbose: bool,\n': b'verbose: Union[bool, int, float],\n',
-        b'from enumerate_input import enumerate_input\n': b'from unmp import unmp\n',
-        b'debug=debug,\n': None,
-        b'debug=debug,': None,
-        b' debug=debug': None,
-        b'debug: bool,\n': None,
-        b'debug: bool\n': None,
-        b'debug: bool,': None,
-        b'debug=self.debug': None,
-        b'debug=False': None,
+    pair_dict = {
+        b"verbose: bool,\n": b"verbose: Union[bool, int, float],\n",
+        b"from enumerate_input import enumerate_input\n": b"from unmp import unmp\n",
+        b"debug=debug,\n": None,
+        b"debug=debug,": None,
+        b" debug=debug": None,
+        b"debug: bool,\n": None,
+        b"debug: bool\n": None,
+        b"debug: bool,": None,
+        b"debug=self.debug": None,
+        b"debug=False": None,
         b"debug=ctx.obj['debug']": None,
-        b'debug: bool = False,\n': None,
-        b'debug: bool = False\n': None,
-        b'from iridb.click_global_options import add_options\n': None,
-        b'from iridb.click_global_options import click_global_options\n': None,
-        b'if debug:\n': b'if verbose == inf:\n',
-        b'if self.debug:\n': b'if verbose == inf:\n',
-        b'@click.option("--debug", is_flag=True)\n': b'@click_add_options(click_global_options)\n',
-        b'verbose: bool = False,\n': b'verbose: Union[bool, int, float],\n',
-        b'verbose: bool = False\n': b'verbose: Union[bool, int, float],\n',
-        b'verbose: bool\n': b'verbose: Union[bool, int, float],\n',
-        b'verbose: int,\n': b'verbose: Union[bool, int, float],\n',
-        b'verbose: int,': b'verbose: Union[bool, int, float],',
-        b'verbose: Union[bool, int],\n': b'verbose: Union[bool, int, float],\n',
-        b'verbose=debug': b'verbose=verbose',
-        b'@add_options(click_global_options)\n': b'@click_add_options(click_global_options)\n',
-        b'@click.group()\n': b'@click.group(no_args_is_help=True)\n',
-        b'from printtool import output\n': b'from mptool import output\n',
-        b', ,': b',',
-        b'verbose: int):\n': b'verbose: Union[bool, int, float],):\n',
-        b'    verbose: int\n': b'    verbose: Union[bool, int, float]\n',
-        b'from asserttool import eprint\n': b'from eprint import eprint\n',
-        b'from asserttool import tv\n': b'from clicktool import tv\n',
-        b'from asserttool import nevd\n': b'from clicktool import tv\n',
-        b'verbose: int = False,\n': b'verbose: Union[bool, int, float],\n',
-        b'from typimg import ': b'from typing import ',
-        b'from typimg import ': b'from typing import ',
-        b'from unmp import unmp\n': b'from mptool import unmp\n',
+        b"debug: bool = False,\n": None,
+        b"debug: bool = False\n": None,
+        b"from iridb.click_global_options import add_options\n": None,
+        b"from iridb.click_global_options import click_global_options\n": None,
+        b"if debug:\n": b"if verbose == inf:\n",
+        b"if self.debug:\n": b"if verbose == inf:\n",
+        b'@click.option("--debug", is_flag=True)\n': b"@click_add_options(click_global_options)\n",
+        b"verbose: bool = False,\n": b"verbose: Union[bool, int, float],\n",
+        b"verbose: bool = False\n": b"verbose: Union[bool, int, float],\n",
+        b"verbose: bool\n": b"verbose: Union[bool, int, float],\n",
+        b"verbose: int,\n": b"verbose: Union[bool, int, float],\n",
+        b"verbose: int,": b"verbose: Union[bool, int, float],",
+        b"verbose: Union[bool, int],\n": b"verbose: Union[bool, int, float],\n",
+        b"verbose=debug": b"verbose=verbose",
+        b"@add_options(click_global_options)\n": b"@click_add_options(click_global_options)\n",
+        b"@click.group()\n": b"@click.group(no_args_is_help=True)\n",
+        b"from printtool import output\n": b"from mptool import output\n",
+        b", ,": b",",
+        b"verbose: int):\n": b"verbose: Union[bool, int, float],):\n",
+        b"    verbose: int\n": b"    verbose: Union[bool, int, float]\n",
+        b"from asserttool import eprint\n": b"from eprint import eprint\n",
+        b"from asserttool import tv\n": b"from clicktool import tv\n",
+        b"from asserttool import nevd\n": b"from clicktool import tv\n",
+        b"verbose: int = False,\n": b"verbose: Union[bool, int, float],\n",
+        b"from typimg import ": b"from typing import ",
+        b"from typimg import ": b"from typing import ",
+        b"from unmp import unmp\n": b"from mptool import unmp\n",
     }
     return pair_dict
 
 
-def byte_vector_replacer(*,
-                         path: Path,
-                         pair_dict: dict,
-                         verbose: Union[bool, int, float],
-                         ) -> None:
+def byte_vector_replacer(
+    *,
+    path: Path,
+    pair_dict: dict,
+    verbose: Union[bool, int, float],
+) -> None:
 
-    guard = b'# disable: byte-vector-replacer\n'
+    guard = b"# disable: byte-vector-replacer\n"
     ic(guard)
     if guard in path.read_bytes():
         raise GuardFoundError(path.as_posix(), guard)
@@ -112,44 +112,52 @@ def byte_vector_replacer(*,
         if verbose:
             ic(key, value)
         if value is None:
-            value = b''
+            value = b""
             remove_match = True
         else:
             remove_match = False
-        replace_text_in_file(path=path,
-                             bytes_to_match=key,
-                             replacement=value,
-                             output_fh=None,
-                             stdout=False,
-                             read_mode='rb',
-                             write_mode='wb',
-                             remove_match=remove_match,
-                             verbose=True,
-                             )
+        replace_text_in_file(
+            path=path,
+            bytes_to_match=key,
+            replacement=value,
+            output_fh=None,
+            stdout=False,
+            read_mode="rb",
+            write_mode="wb",
+            remove_match=remove_match,
+            verbose=True,
+        )
 
 
 @click.command()
 @click.argument("paths", type=str, nargs=-1)
-@click.option('--ipython', is_flag=True)
+@click.option("--ipython", is_flag=True)
 @click_add_options(click_global_options)
 @click.pass_context
-def cli(ctx,
-        paths: Sequence[str],
-        ipython: bool,
-        verbose: Union[bool, int, float],
-        verbose_inf: bool,
-        dict_input: bool,
-        ) -> None:
+def cli(
+    ctx,
+    paths: Sequence[str],
+    ipython: bool,
+    verbose: Union[bool, int, float],
+    verbose_inf: bool,
+    dict_input: bool,
+) -> None:
 
-    tty, verbose = tv(ctx=ctx,
-                      verbose=verbose,
-                      verbose_inf=verbose_inf,
-                      )
+    tty, verbose = tv(
+        ctx=ctx,
+        verbose=verbose,
+        verbose_inf=verbose_inf,
+    )
 
     if paths:
         iterator = paths
     else:
-        iterator = unmp(valid_types=[bytes,], verbose=verbose)
+        iterator = unmp(
+            valid_types=[
+                bytes,
+            ],
+            verbose=verbose,
+        )
     del paths
 
     pair_dict = get_pairs(verbose=verbose)
@@ -161,9 +169,14 @@ def cli(ctx,
             ic(index, _path)
 
         if ipython:
-            import IPython; IPython.embed()
+            import IPython
+
+            IPython.embed()
         try:
-            byte_vector_replacer(path=_path, pair_dict=pair_dict, verbose=verbose,)
+            byte_vector_replacer(
+                path=_path,
+                pair_dict=pair_dict,
+                verbose=verbose,
+            )
         except GuardFoundError as e:
             ic(e)
-
