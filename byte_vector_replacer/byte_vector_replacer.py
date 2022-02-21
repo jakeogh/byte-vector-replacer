@@ -138,6 +138,7 @@ def cli(ctx,
         ipython: bool,
         verbose: Union[bool, int, float],
         verbose_inf: bool,
+        dict_input: bool,
         ) -> None:
 
     tty, verbose = tv(ctx=ctx,
