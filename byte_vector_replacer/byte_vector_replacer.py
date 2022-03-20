@@ -21,17 +21,14 @@
 # pylint: disable=W0201  # attribute defined outside __init__
 # pylint: disable=R0916  # Too many boolean expressions in if statement
 # pylint: disable=C0305  # Trailing newlines editor should fix automatically, pointless warning
-# pylint: disable=C0413  # TEMP isort issue [wrong-import-position] Import "from pathlib import Path" should be placed at the top of the module [C0413]
 
 import os
-# import sys
-# import time
 from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
 from signal import signal
-#from typing import Iterable
-#from typing import Optional
+# from typing import Iterable
+# from typing import Optional
 from typing import Sequence
 from typing import Union
 
