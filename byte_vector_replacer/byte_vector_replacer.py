@@ -30,8 +30,8 @@ from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
 from signal import signal
-from typing import Iterable
-from typing import Optional
+#from typing import Iterable
+#from typing import Optional
 from typing import Sequence
 from typing import Union
 
@@ -118,8 +118,8 @@ def byte_vector_replacer(
             remove_match = False
         replace_text_in_file(
             path=path,
-            bytes_to_match=key,
-            replacement=value,
+            match_bytes=key,
+            replacement_bytes=value,
             output_fh=None,
             stdout=False,
             read_mode="rb",
