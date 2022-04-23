@@ -38,10 +38,10 @@ from asserttool import ic
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
+# from retry_on_exception import retry_on_exception
+from mptool import unmp
 # from mptool import output
 from replace_text import replace_text_in_file
-# from retry_on_exception import retry_on_exception
-from unmp import unmp
 
 signal(SIGPIPE, SIG_DFL)
 
@@ -91,6 +91,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"from typimg import ": b"from typing import ",
         b"from unmp import unmp\n": b"from mptool import unmp\n",
         b"quit(": b"sys.exit(",
+        b', "click-command-tree"': None,
     }
     return pair_dict
 
