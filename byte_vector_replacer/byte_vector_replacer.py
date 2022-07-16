@@ -92,6 +92,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"from unmp import unmp\n": b"from mptool import unmp\n",
         b" quit(": b" sys.exit(",
         b', "click-command-tree"': None,
+        b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n": b"# pylint: disable=missing-docstring  # [C0111] docstrings are always outdated and wrong\n",
     }
     return pair_dict
 
