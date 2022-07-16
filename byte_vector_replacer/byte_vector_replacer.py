@@ -90,7 +90,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"from typimg import ": b"from typing import ",
         b"from typimg import ": b"from typing import ",
         b"from unmp import unmp\n": b"from mptool import unmp\n",
-        b"quit(": b"sys.exit(",
+        b" quit(": b" sys.exit(",
         b', "click-command-tree"': None,
     }
     return pair_dict
