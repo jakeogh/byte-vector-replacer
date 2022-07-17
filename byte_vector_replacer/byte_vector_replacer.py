@@ -20,27 +20,21 @@
 # pylint: disable=E1101  # no member for base
 # pylint: disable=W0201  # attribute defined outside __init__
 # pylint: disable=R0916  # Too many boolean expressions in if statement
-# pylint: disable=C0305  # Trailing newlines editor should fix automatically, pointless warning
 
 import os
 from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
 from signal import signal
-# from typing import Iterable
-# from typing import Optional
 from typing import Sequence
 from typing import Union
 
 import click
 from asserttool import ic
-# from click_auto_help import AHGroup
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
-# from retry_on_exception import retry_on_exception
 from mptool import unmp
-# from mptool import output
 from replace_text import replace_text_in_file
 
 signal(SIGPIPE, SIG_DFL)
@@ -93,7 +87,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b" quit(": b" sys.exit(",
         b', "click-command-tree"': None,
         b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n": b"# pylint: disable=missing-docstring  # [C0111] docstrings are always outdated and wrong\n",
-        b"# pylint: disable=W0511  # todo is encouraged\n": "# pylint: disable=fixme  # [W0511] todo is encouraged\n",
+        b"# pylint: disable=W0511  # todo is encouraged\n": b"# pylint: disable=fixme  # [W0511] todo is encouraged\n",
     }
     return pair_dict
 
