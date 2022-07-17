@@ -93,6 +93,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b" quit(": b" sys.exit(",
         b', "click-command-tree"': None,
         b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n": b"# pylint: disable=missing-docstring  # [C0111] docstrings are always outdated and wrong\n",
+        b"# pylint: disable=W0511  # todo is encouraged\n": "# pylint: disable=fixme  # [W0511] todo is encouraged\n",
     }
     return pair_dict
 
