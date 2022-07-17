@@ -106,6 +106,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"# pylint: disable=E1101  # no member for base\n":                                 b"# pylint: disable=no-member                       # [E1101] no member for base\n",
         b"# pylint: disable=W0201  # attribute defined outside __init__\n":                 b"# pylint: disable=attribute-defined-outside-init  # [W0201]\n",
         b"# pylint: disable=R0916  # Too many boolean expressions in if statement\n":       b"# pylint: disable=too-many-boolean-expressions    # [R0916] in if statement\n",
+        b" Optional[list[str]] ": b" None | list[str] ",
     }
     return pair_dict
 
