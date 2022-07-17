@@ -89,7 +89,10 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n": b"# pylint: disable=missing-docstring  # [C0111] docstrings are always outdated and wrong\n",
         b"# pylint: disable=W0511  # todo is encouraged\n": b"# pylint: disable=fixme  # [W0511] todo is encouraged\n",
         b"# pylint: disable=fixme  # [W0511] todo is encouraged\n": b"# pylint: disable=fixme              # [W0511] todo is encouraged\n",
-        b"# pylint: disable=C0301  # line too long\n": b"# pylint: disable=line-too-long      # [C0301] line too long\n",
+        b"# pylint: disable=C0301  # line too long\n": b"# pylint: disable=line-too-long      # [C0301]\n",
+        b"# pylint: disable=R0902  # too many instance attributes\n": b"# pylint: disable=too-many-instance-attributes  # [R0902]\n",
+        b"# pylint: disable=C0302  # too many lines in module\n": b"# pylint: disable=too-many-lines     # [C0302] too many lines in module\n",
+        b"# pylint: disable=C0103  # single letter var names, func name too descriptive\n": b"# pylint: disable=invalid-name  # [C0103] single letter var names, func name too descriptive\n",
     }
     return pair_dict
 
