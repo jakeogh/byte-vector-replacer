@@ -113,6 +113,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b": Optional[List[bytes]],\n": b": None | list[bytes],\n",
         b"from typing import Optional\n": None,
         b"from typing import Union\n": None,
+        b"from typing import List\n": None,
         b"List[bytes]": b"list[bytes]",
         b"List[str]": b"list[str]",
     }
