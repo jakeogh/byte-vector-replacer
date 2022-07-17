@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 # tab-width:4
 # disable: byte-vector-replacer
+# disable: black
 
 # pylint: disable=C0111  # docstrings are always outdated and wrong
 # pylint: disable=C0114  # Missing module docstring (missing-module-docstring)
@@ -86,13 +87,17 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"from unmp import unmp\n": b"from mptool import unmp\n",
         b" quit(": b" sys.exit(",
         b', "click-command-tree"': None,
-        b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n": b"# pylint: disable=missing-docstring  # [C0111] docstrings are always outdated and wrong\n",
+        b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n": b"# pylint: disable=missing-docstring             # [C0111] docstrings are always outdated and wrong\n",
         b"# pylint: disable=W0511  # todo is encouraged\n": b"# pylint: disable=fixme  # [W0511] todo is encouraged\n",
-        b"# pylint: disable=fixme  # [W0511] todo is encouraged\n": b"# pylint: disable=fixme              # [W0511] todo is encouraged\n",
-        b"# pylint: disable=C0301  # line too long\n": b"# pylint: disable=line-too-long      # [C0301]\n",
+        b"# pylint: disable=fixme  # [W0511] todo is encouraged\n": b"# pylint: disable=fixme                         # [W0511] todo is encouraged\n",
+        b"# pylint: disable=C0301  # line too long\n": b"# pylint: disable=line-too-long                 # [C0301]\n",
         b"# pylint: disable=R0902  # too many instance attributes\n": b"# pylint: disable=too-many-instance-attributes  # [R0902]\n",
-        b"# pylint: disable=C0302  # too many lines in module\n": b"# pylint: disable=too-many-lines     # [C0302] too many lines in module\n",
-        b"# pylint: disable=C0103  # single letter var names, func name too descriptive\n": b"# pylint: disable=invalid-name  # [C0103] single letter var names, func name too descriptive\n",
+        b"# pylint: disable=C0302  # too many lines in module\n": b"# pylint: disable=too-many-lines                # [C0302] too many lines in module\n",
+        b"# pylint: disable=C0103  # single letter var names, func name too descriptive\n": b"# pylint: disable=invalid-name                  # [C0103] single letter var names, name too descriptive\n",
+        b"# pylint: disable=R0911  # too many return statements\n": b"# pylint: disable=too-many-return-statements    # [R0911]\n",
+        b"# pylint: disable=R0912  # too many branches\n": b"# pylint: disable=too-many-branches             # [R0912]\n",
+        b"# pylint: disable=R0915  # too many statements\n": b"# pylint: disable=too-many-statements           # [R0915]\n",
+        b"# pylint: disable=R0913  # too many arguments\n":                   b"# pylint: disable=too-many-arguments            # [R0913]\n",
     }
     return pair_dict
 
