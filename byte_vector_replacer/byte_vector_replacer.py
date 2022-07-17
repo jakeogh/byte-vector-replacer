@@ -125,6 +125,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Optional[Sequence[Path]]": b"None | Sequence[Path]",
         b"Optional[tuple[str]]":    b"None | tuple[str]",
         b"from typing import Sequence\n": b"from collections.abc import Sequence\n",
+        b"Union[int, str, Path]": b"int | str | Path",
     }
     return pair_dict
 
