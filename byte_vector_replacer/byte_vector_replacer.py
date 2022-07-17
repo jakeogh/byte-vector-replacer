@@ -116,6 +116,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"from typing import List\n": None,
         b"List[bytes]": b"list[bytes]",
         b"List[str]": b"list[str]",
+        b"from typing import Iterator\n": b"from collections.abc import Iterator\n",
     }
     return pair_dict
 
