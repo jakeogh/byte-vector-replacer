@@ -115,6 +115,9 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Optional[bytes]": b"None | bytes",
         b"Optional[str]": b"None | str",
         b"Optional[int]": b"None | int",
+        b"Optional[object]": b"None | object",
+        b"Optional[dict]": b"None | dict",
+        b"Optional[Digest]": b"None | Digest",
         b"from typing import Optional\n": None,
         b"from typing import Union\n": None,
         b"from typing import List\n": None,
@@ -126,6 +129,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Optional[tuple[str]]":    b"None | tuple[str]",
         b"from typing import Sequence\n": b"from collections.abc import Sequence\n",
         b"Union[int, str, Path]": b"int | str | Path",
+        b"Union[str, bytes, object]": b"str | bytes | object",
     }
     return pair_dict
 
