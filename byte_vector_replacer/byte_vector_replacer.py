@@ -109,10 +109,12 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"# pylint: disable=R0916  # Too many boolean expressions in if statement\n":       b"# pylint: disable=too-many-boolean-expressions    # [R0916] in if statement\n",
         b" Optional[list[str]] ": b" None | list[str] ",
         b" Optional[list[bytes]] ": b" None | list[bytes] ",
-        b": Optional[List[bytes]]\n": b": None | List[bytes]\n",
-        b": Optional[List[bytes]],\n": b": None | List[bytes],\n",
+        b": Optional[List[bytes]]\n": b": None | list[bytes]\n",
+        b": Optional[List[bytes]],\n": b": None | list[bytes],\n",
         b"from typing import Optional\n": None,
         b"from typing import Union\n": None,
+        b"List[bytes]": b"list[bytes]",
+        b"List[str]": b"list[str]",
     }
     return pair_dict
 
