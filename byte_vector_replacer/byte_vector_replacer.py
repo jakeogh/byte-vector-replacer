@@ -136,6 +136,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Union[str, bytes, object]": b"str | bytes | object",
         b"Union[dict, bool]": b"dict | bool",
         b"Union[str, bytes]": b"str | bytes",
+        b"Optional[tuple[int, int]]": b"None | tuple[int, int]",
     }
     return pair_dict
 
