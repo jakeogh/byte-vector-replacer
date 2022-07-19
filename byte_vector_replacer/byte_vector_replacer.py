@@ -4,7 +4,6 @@
 # disable: byte-vector-replacer
 # disable: black
 
-
 # pylint: disable=C0111  # docstrings are always outdated and wrong
 # pylint: disable=C0114  # Missing module docstring (missing-module-docstring)
 # pylint: disable=W0511  # todo is encouraged
