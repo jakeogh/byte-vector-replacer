@@ -140,6 +140,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Union[list, tuple]": b"list | tuple",
         b"Optional[list | tuple]": b"None | list | tuple",
         b"from mptool import unmp": b"from unmp import unmp",
+        b"# pylint: disable=C0305  # Trailing newlines editor should fix automatically, pointless warning": None,
     }
     return pair_dict
 
