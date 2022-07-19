@@ -149,6 +149,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Optional[Iterator[str]]": b"None | Iterator[str]",
         b"Optional[Iterable[str]]": b"None | Iterable[str]",
         b"Optional[Sequence]": b"None | Sequence",
+        b"Optional[float]": b"None | float",
     }
     return pair_dict
 
