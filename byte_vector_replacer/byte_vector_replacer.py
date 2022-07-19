@@ -149,6 +149,8 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
     }
     return pair_dict
 
+# need a guard arg, like the :value cant already exist at all
+
 
 def byte_vector_replacer(
     *,
