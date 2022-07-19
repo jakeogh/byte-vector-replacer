@@ -143,6 +143,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"# pylint: disable=C0305  # Trailing newlines editor should fix automatically, pointless warning": None,
         b"# flake8: noqa           # flake8 has no per file settings :(": None,
         b"Optional[Decimal]": b"None | Decimal",
+        b"Optional[Tuple[str, ...]]": b"None | Tuple[str, ...]",
     }
     return pair_dict
 
