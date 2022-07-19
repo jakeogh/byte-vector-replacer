@@ -4,6 +4,7 @@
 # disable: byte-vector-replacer
 # disable: black
 
+
 # pylint: disable=C0111  # docstrings are always outdated and wrong
 # pylint: disable=C0114  # Missing module docstring (missing-module-docstring)
 # pylint: disable=W0511  # todo is encouraged
@@ -35,8 +36,8 @@ from asserttool import ic
 from clicktool import click_add_options
 from clicktool import click_global_options
 from clicktool import tv
-from mptool import unmp
 from replace_text import replace_text_in_file
+from unmp import unmp
 
 signal(SIGPIPE, SIG_DFL)
 
@@ -140,6 +141,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Union[bool, int, float]": b"bool | int | float",
         b"Union[list, tuple]": b"list | tuple",
         b"Optional[list | tuple]": b"None | list | tuple",
+        b"from mptool import unmp": b"from unmp import unmp",
     }
     return pair_dict
 
@@ -215,9 +217,10 @@ def cli(
         if verbose:
             ic(index, _path)
 
+
+
         if ipython:
             import IPython
-
             IPython.embed()
         try:
             byte_vector_replacer(
