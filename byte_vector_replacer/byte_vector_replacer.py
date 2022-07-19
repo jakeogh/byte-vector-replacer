@@ -142,6 +142,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"from mptool import unmp": b"from unmp import unmp",
         b"# pylint: disable=C0305  # Trailing newlines editor should fix automatically, pointless warning": None,
         b"# flake8: noqa           # flake8 has no per file settings :(": None,
+        b"Optional[Decimal]": b"None | Decimal",
     }
     return pair_dict
 
