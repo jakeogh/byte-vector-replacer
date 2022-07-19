@@ -136,6 +136,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Union[dict, bool]": b"dict | bool",
         b"Union[str, bytes]": b"str | bytes",
         b"Optional[tuple[int, int]]": b"None | tuple[int, int]",
+        b"Optional[Sequence[int]]": b"None | Sequence[int]",
         b"Union[bool, int, float]": b"bool | int | float",
         b"Union[list, tuple]": b"list | tuple",
         b"Optional[list | tuple]": b"None | list | tuple",
