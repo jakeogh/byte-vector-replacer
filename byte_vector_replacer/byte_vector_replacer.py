@@ -40,7 +40,6 @@ from unmp import unmp
 
 signal(SIGPIPE, SIG_DFL)
 
-
 class GuardFoundError(ValueError):
     pass
 
