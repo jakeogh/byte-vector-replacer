@@ -144,6 +144,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"# flake8: noqa           # flake8 has no per file settings :(": None,
         b"Optional[Decimal]": b"None | Decimal",
         b"Optional[Tuple[str, ...]]": b"None | Tuple[str, ...]",
+        b"# pylint: disable=too-many-boolean-expressions    # [R0916] in if statement\n\n": b"# pylint: disable=too-many-boolean-expressions    # [R0916] in if statement\nfrom __future__ import annotations\n",
     }
     return pair_dict
 
