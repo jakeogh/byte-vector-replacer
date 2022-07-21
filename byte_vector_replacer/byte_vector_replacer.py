@@ -152,6 +152,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Optional[float]": b"None | float",
         b"Union[bytes, dict]": b"bytes | dict",
         b"Union[bool, float, int]": b"bool | int | float",
+        b"@click.group(no_args_is_help=True)": b"@click.group(no_args_is_help=True, cls=AHGroup)"
     }
     return pair_dict
 
