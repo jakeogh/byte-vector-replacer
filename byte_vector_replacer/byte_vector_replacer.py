@@ -152,7 +152,8 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"Optional[float]": b"None | float",
         b"Union[bytes, dict]": b"bytes | dict",
         b"Union[bool, float, int]": b"bool | int | float",
-        b"@click.group(no_args_is_help=True)": b"@click.group(no_args_is_help=True, cls=AHGroup)"
+        b"@click.group(no_args_is_help=True)": b"@click.group(no_args_is_help=True, cls=AHGroup)",
+        b"#!/usr/bin/env python3\n\n# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n": b"#!/usr/bin/env python3\n# -*- coding: utf8 -*-\n\n# pylint: disable=useless-suppression             # [I0021]\n# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n",
     }
     return pair_dict
 
