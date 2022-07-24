@@ -85,7 +85,6 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"verbose: int = False,\n": b"verbose: Union[bool, int, float],\n",
         b"from typimg import ": b"from typing import ",
         b"from typimg import ": b"from typing import ",
-        b"from unmp import unmp\n": b"from mptool import unmp\n",
         b" quit(": b" sys.exit(",
         b', "click-command-tree"': None,
         b"# pylint: disable=C0111  # docstrings are always outdated and wrong\n":            b"# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n",
