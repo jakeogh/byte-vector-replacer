@@ -47,6 +47,7 @@ class GuardFoundError(ValueError):
 def get_pairs(verbose: Union[bool, int, float]) -> dict:
     pair_dict = {
         b"verbose: bool,\n": b"verbose: Union[bool, int, float],\n",
+        b"verbose,\n": b"verbose: Union[bool, int, float],\n",
         b"from enumerate_input import enumerate_input\n": b"from unmp import unmp\n",
         b"debug=debug,\n": None,
         b"debug=debug,": None,
