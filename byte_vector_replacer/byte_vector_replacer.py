@@ -157,6 +157,7 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"@click.group(no_args_is_help=True)": b"@click.group(no_args_is_help=True, cls=AHGroup)",
         b"#!/usr/bin/env python3\n\n# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n": b"#!/usr/bin/env python3\n# -*- coding: utf8 -*-\n\n# pylint: disable=useless-suppression             # [I0021]\n# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n",
         b"dict_input": b"dict_output",
+        b"verbose: bool | int | float,":b"verbose: bool | int | float = False,",
     }
     return pair_dict
 
@@ -197,13 +198,11 @@ def byte_vector_replacer(
 
 @click.command()
 @click.argument("paths", type=str, nargs=-1)
-@click.option("--ipython", is_flag=True)
 @click_add_options(click_global_options)
 @click.pass_context
 def cli(
     ctx,
     paths: Sequence[str],
-    ipython: bool,
     verbose: Union[bool, int, float],
     verbose_inf: bool,
     dict_output: bool,
@@ -233,12 +232,6 @@ def cli(
 
         if verbose:
             ic(index, _path)
-
-
-
-        if ipython:
-            import IPython
-            IPython.embed()
         try:
             byte_vector_replacer(
                 path=_path,
