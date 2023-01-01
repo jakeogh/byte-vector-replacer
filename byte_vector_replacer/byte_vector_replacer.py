@@ -157,7 +157,8 @@ def get_pairs(verbose: Union[bool, int, float]) -> dict:
         b"@click.group(no_args_is_help=True)": b"@click.group(no_args_is_help=True, cls=AHGroup)",
         b"#!/usr/bin/env python3\n\n# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n": b"#!/usr/bin/env python3\n# -*- coding: utf8 -*-\n\n# pylint: disable=useless-suppression             # [I0021]\n# pylint: disable=missing-docstring               # [C0111] docstrings are always outdated and wrong\n",
         b"dict_input": b"dict_output",
-        b"verbose: bool | int | float,":b"verbose: bool | int | float = False,",
+        b"verbose: bool | int | float,": b"verbose: bool | int | float = False,",
+        b"from iridb.StatusLine import StatusLine": b"from statustool.StatusLine import StatusLine",
     }
     return pair_dict
 
