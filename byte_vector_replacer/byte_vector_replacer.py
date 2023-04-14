@@ -131,7 +131,7 @@ def get_pairs(verbose: Union[bool, int, float] = False,) -> dict:
         b"from typing import Iterator\n": b"from collections.abc import Iterator\n",
         b"Optional[Sequence[str]]": b"None | Sequence[str]",
         b"Optional[Sequence[Path]]": b"None | Sequence[Path]",
-        b"Optional[tuple[str]]": b"None | tuple[str]",
+        b"Optional[tuple[str]]": b"None | tuple[str, ...]",
         b"from typing import Sequence\n": b"from collections.abc import Sequence\n",
         b"Union[int, str, Path]": b"int | str | Path",
         b"Union[str, bytes, object]": b"str | bytes | object",
