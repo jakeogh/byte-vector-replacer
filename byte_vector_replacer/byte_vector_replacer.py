@@ -29,7 +29,6 @@ from pathlib import Path
 from signal import SIG_DFL
 from signal import SIGPIPE
 from signal import signal
-from typing import Sequence
 from typing import Union
 
 import click
@@ -203,7 +202,7 @@ def byte_vector_replacer(
 @click.pass_context
 def cli(
     ctx,
-    paths: Sequence[str],
+    paths: tuple[str, ...],
     verbose_inf: bool,
     dict_output: bool,
     verbose: Union[bool, int, float] = False,
