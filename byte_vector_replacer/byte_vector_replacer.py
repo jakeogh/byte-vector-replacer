@@ -192,7 +192,6 @@ def byte_vector_replacer(
             read_mode="rb",
             write_mode="wb",
             remove_match=remove_match,
-            verbose=True,
         )
 
 
