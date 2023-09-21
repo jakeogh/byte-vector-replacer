@@ -159,6 +159,7 @@ def get_pairs(verbose: Union[bool, int, float] = False,) -> dict:
         b"verbose: bool | int | float,": b"verbose: bool | int | float = False,",
         b"from iridb.StatusLine import StatusLine": b"from statustool.StatusLine import StatusLine",
         b"verbose: bool | int | float = False,": b"verbose: bool = False,",
+        b"from timetool import get_timestamp": b"from timestamptool import get_timestamp",
     }
     return pair_dict
 
