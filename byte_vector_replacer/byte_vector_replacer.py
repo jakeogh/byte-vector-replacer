@@ -159,7 +159,7 @@ def get_pairs(verbose: bool = False,) -> dict:
         b"from iridb.StatusLine import StatusLine": b"from statustool.StatusLine import StatusLine",
         b"verbose: bool | int | float = False,": b"verbose: bool = False,",
         b"from timetool import get_timestamp": b"from timestamptool import get_timestamp",
-        b'    tty, verbose = tv(\n        ctx=ctx,\n        verbose=verbose,\n        verbose_inf=verbose_inf,\n    )\n': b'    tty, verbose = tv(\n        ctx=ctx,\n        verbose=verbose,\n        verbose_inf=verbose_inf,\n        ic=ic,\n        gvd=gvd,\n    )\n',
+        b'    tty, verbose = tv(\n        ctx=ctx,\n        verbose=verbose,\n        verbose_inf=verbose_inf,\n    )\n': b'    tty, verbose = tvicgvd(\n        ctx=ctx,\n        verbose=verbose,\n        verbose_inf=verbose_inf,\n        ic=ic,\n        gvd=gvd,\n    )\n',
     }
     return pair_dict
 
