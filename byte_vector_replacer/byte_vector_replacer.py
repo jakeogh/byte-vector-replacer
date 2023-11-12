@@ -34,7 +34,8 @@ import click
 from asserttool import ic
 from clicktool import click_add_options
 from clicktool import click_global_options
-from clicktool import tv
+from clicktool import tvicgvd
+from globalverbose import gvd
 from replace_text import replace_text_in_file
 from unmp import unmp
 
@@ -165,9 +166,6 @@ def get_pairs(verbose: bool = False,) -> dict:
     }
     return pair_dict
 
-# need a guard arg, like the :value cant already exist at all
-
-# del Optional[Iterator[str]]
 
 def byte_vector_replacer(
     *,
@@ -181,8 +179,7 @@ def byte_vector_replacer(
     if guard in path.read_bytes():
         raise GuardFoundError(path.as_posix(), guard)
     for key, value in pair_dict.items():
-        if verbose:
-            ic(key, value)
+        ic(key, value)
         if value is None:
             value = b""
             remove_match = True
@@ -211,13 +208,12 @@ def cli(
     verbose: bool = False,
 ) -> None:
 
-    if not verbose:
-        ic.disable()
-
-    tty, verbose = tv(
+    tty, verbose = tvicgvd(
         ctx=ctx,
         verbose=verbose,
         verbose_inf=verbose_inf,
+        ic=ic,
+        gvd=gvd,
     )
 
     if paths:
