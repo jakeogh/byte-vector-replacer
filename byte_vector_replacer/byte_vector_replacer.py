@@ -211,11 +211,10 @@ def cli(
             valid_types=[
                 bytes,
             ],
-            verbose=verbose,
         )
     del paths
 
-    pair_dict = get_pairs(verbose=verbose)
+    pair_dict = get_pairs()
     index = 0
     for index, path in enumerate(iterator):
         _path = Path(os.fsdecode(path))
