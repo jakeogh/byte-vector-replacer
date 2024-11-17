@@ -160,7 +160,6 @@ def byte_vector_replacer(
     *,
     path: Path,
     pair_dict: dict,
-    verbose: bool = False,
 ) -> None:
 
     guard = b"# disable: byte-vector-replacer\n"
@@ -221,13 +220,11 @@ def cli(
     for index, path in enumerate(iterator):
         _path = Path(os.fsdecode(path))
 
-        if verbose:
-            ic(index, _path)
+        ic(index, _path)
         try:
             byte_vector_replacer(
                 path=_path,
                 pair_dict=pair_dict,
-                verbose=verbose,
             )
         except GuardFoundError as e:
             ic(e)
