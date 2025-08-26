@@ -124,6 +124,7 @@ def get_pairs(verbose: bool = False,) -> dict:
         b"Union[str, bytes, object]": b"str | bytes | object",
         b"Union[dict, bool]": b"dict | bool",
         b"Union[str, bytes]": b"str | bytes",
+        b"Union[str, Path]": b"str | Path",
         b"Optional[tuple[int, int]]": b"None | tuple[int, int]",
         b"Optional[Sequence[int]]": b"None | Sequence[int]",
         b"Union[bool, int, float]": b"bool | int | float",
