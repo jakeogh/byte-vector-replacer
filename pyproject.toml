@@ -1,0 +1,44 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byte_vector_replacer"
+version = "0.0.1760906424"
+description = "manages and applies dict of automatically replaced byte vectors in ~/.config"
+authors = [
+    { name = "Justin Keogh", email = "github.com@v6y.net" },
+]
+dependencies = [
+    "asserttool @ git+https://github.com/jakeogh/asserttool",
+    "clicktool @ git+https://github.com/jakeogh/clicktool",
+    "globalverbose @ git+https://github.com/jakeogh/globalverbose",
+    "replace-text @ git+https://github.com/jakeogh/replace-text",
+    "unmp @ git+https://github.com/jakeogh/unmp",
+]
+requires-python = ">=3.11"
+
+[project.license]
+text = "ISC"
+
+[project.urls]
+Homepage = "https://github.com/jakeogh/byte-vector-replacer"
+
+[project.scripts]
+byte-vector-replacer = "byte_vector_replacer.byte_vector_replacer:cli"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+exclude = [
+    "tests",
+]
+
+[tool.setuptools.package-data]
+byte_vector_replacer = [
+    "py.typed",
+]
